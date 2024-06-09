@@ -1,0 +1,13 @@
+generator client {
+  provider = "dart run orm"
+  output   = "../lib/prisma/tenant/generated"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("TENANT_DATABASE_URL")
+}
+
+model Test {
+  id Int @id @default(autoincrement())
+}

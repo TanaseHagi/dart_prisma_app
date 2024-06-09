@@ -1,0 +1,22 @@
+{
+  "name": "dart_prisma_app",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "gen:manager": "npx prisma generate --schema=./prisma/manager.prisma",
+    "gen:tenant": "npx prisma generate --schema=./prisma/tenant.prisma",
+    "gen": "npm run gen:manager && npm run gen:tenant",
+    "push:manager": "npx prisma db push --schema=./prisma/manager.prisma",
+    "push:tenant": "npx prisma db push --schema=./prisma/tenant.prisma",
+    "push": "npm run push:manager && npm run push:tenant"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "prisma": "^5.15.0"
+  }
+}
